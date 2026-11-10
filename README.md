@@ -27,22 +27,6 @@ play.
 The solver treats each legal board configuration as a state in a
 directed game graph.
 
-    A **node** represents a legal board position, including the side to
-    move where that information is part of the state representation.
-    A directed **edge** represents one legal move from a position to its
-    successor.
-    Terminal positions are classified according to the game rules,
-    principally checkmate and stalemate.
-    Captures move play into a lower piece count layer. Since captures
-    reduce the number of pieces, the graph can be analysed in layers
-    ordered by piece count.
-    Positions that can be reached from the specified initial position
-    are extracted to form the reachable game graph.
-    Retrograde analysis propagates WIN and LOSS values backwards from
-    known terminal positions. Positions that are neither proven WIN nor
-    proven LOSS are classified as DRAW, subject to the cycle and rule
-    handling described below.
-
 The pipeline is designed to be reproducible. The large SQLite databases
 are generated locally and are not committed to the repository.
 
@@ -77,13 +61,12 @@ NBKN
 
 **Computed reachable graph statistics:**
 
-    Reachable nodes: **49,058,772**
-    Reachable edges: **288,073,820**
-    WIN positions: **21.23%**
-    LOSS positions: **6.85%**
-    DRAW positions: **71.92%**
-    Maximum observed depth: **27 plies**
-    CLOSED SCCs: **3**
+    Reachable nodes: 49,058,772
+    Reachable edges: 288,073,820
+    WIN positions: 21.23%
+    LOSS positions: 6.85%
+    DRAW positions: 71.92%
+    Maximum observed depth: 27 plies
 
 ### Variant B NBBK / `kbbn`
 
@@ -101,13 +84,12 @@ kbbn
 
 **Computed reachable graph statistics:**
 
-    Reachable nodes: **55,590,352**
-    Reachable edges: **324,018,512**
-    WIN positions: **25.69%**
-    LOSS positions: **7.95%**
-    DRAW positions: **66.36%**
-    Maximum observed depth: **31 plies**
-    CLOSED SCCs: **0**
+    Reachable nodes: 55,590,352
+    Reachable edges: 324,018,512
+    WIN positions: 25.69%
+    LOSS positions: 7.95%
+    DRAW positions: 66.36%
+    Maximum observed depth: 31 plies
 
 ## 3. Repository structure
 
