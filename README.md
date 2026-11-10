@@ -116,7 +116,7 @@ kbbn
 │   ├── run_all_retrograde.py
 │   ├── validate_minimax.py
 │   ├── build_black_strategy_tree.py
-│   └── validate_black_strategy_tree.py
+│   
 │
 └── README.md
 ```
